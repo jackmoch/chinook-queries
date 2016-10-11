@@ -23,3 +23,8 @@ Where Employee.Title = 'Sales Support Agent'
 Select Invoice.BillingCountry from Invoice
 Group by Invoice.BillingCountry
 
+6. Provide a query showing the invoices of customers who are from Brazil.
+
+Select * from Invoice
+Join Customer on Invoice.CustomerId = Customer.CustomerId
+Where Customer.Country = 'Brazil'
