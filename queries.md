@@ -40,3 +40,14 @@ Join Employee on Customer.SupportRepId = Employee.EmployeeId
 Select Invoice.Total, Customer.FirstName || ' ' || Customer.LastName as 'Customer Name', Employee.FirstName || ' ' || Employee.LastName as 'Employee Name' from Invoice
 Join Customer on Invoice.CustomerId = Customer.CustomerId
 Join Employee on Customer.SupportRepId = Employee.EmployeeId
+
+9. How many Invoices were there in 2009 and 2011? What are the respective total sales for each of those years?
+
+Select Count(*) as 'Total Invoices' from Invoice
+Where Invoice.InvoiceDate like '%2011%' or Invoice.InvoiceDate like '%2009%'
+
+Select Sum(Invoice.Total) as '2009 Total' from Invoice
+Where Invoice.InvoiceDate like '%2009%'
+
+Select Sum(Invoice.Total) as '2011 Total' from Invoice
+Where Invoice.InvoiceDate like '%2011%'
