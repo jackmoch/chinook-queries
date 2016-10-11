@@ -106,3 +106,13 @@ Join Customer on Employee.EmployeeId = Customer.SupportRepId
 Join Invoice on Customer.CustomerId = Invoice.CustomerId
 Where Employee.Title = 'Sales Support Agent'
 Group by Employee.EmployeeId
+
+19. Which sales agent made the most in sales in 2009?
+
+Select Employee.FirstName, Sum(Invoice.Total) as 'Total' from Employee
+Join Customer on Employee.EmployeeId = Customer.SupportRepId
+Join Invoice on Customer.CustomerId = Invoice.CustomerId
+Where Invoice.InvoiceDate like '%2009%' 
+Group by Employee.EmployeeId 
+Order by Total DESC
+Limit 1
