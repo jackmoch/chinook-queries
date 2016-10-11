@@ -92,3 +92,9 @@ Select Track.Name, Album.Title, MediaType.Name, Genre.Name from Track
 Join Album on Track.AlbumId = Album.AlbumId
 Join MediaType on Track.MediaTypeId = MediaType.MediaTypeId
 Join Genre on Track.GenreId = Genre.GenreId
+
+17. Provide a query that shows all Invoices but includes the # of invoice line items.
+
+Select *, Count(InvoiceLine.InvoiceLineId) as 'Total Invoice Lines' from Invoice
+Join InvoiceLine on Invoice.InvoiceId = InvoiceLine.InvoiceId
+Group by Invoice.InvoiceId
