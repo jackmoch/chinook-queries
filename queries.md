@@ -73,3 +73,9 @@ Select Track.Name, Artist.Name, InvoiceLine.InvoiceLineId from InvoiceLine
 Join Track on InvoiceLine.TrackId = Track.TrackId
 Join Album on Track.AlbumId = Album.AlbumId
 Join Artist on Album.ArtistId = Artist.ArtistId
+
+14. Provide a query that shows the # of invoices per country.
+
+Select Customer.Country, Count(Invoice.InvoiceId) from Customer
+Join Invoice on Customer.CustomerId = Invoice.CustomerId
+Group by Customer.Country
