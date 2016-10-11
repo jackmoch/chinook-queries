@@ -3,3 +3,7 @@
 Select Customer.FirstName || ' ' || Customer.LastName as 'Name', Customer.CustomerId, Customer.Country from Customer
 Where Customer.Country != 'USA'
 
+2. Provide a query only showing the Customers from Brazil.
+
+Select * from Customer
+Where Customer.Country = 'Brazil'
