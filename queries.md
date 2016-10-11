@@ -79,3 +79,9 @@ Join Artist on Album.ArtistId = Artist.ArtistId
 Select Customer.Country, Count(Invoice.InvoiceId) from Customer
 Join Invoice on Customer.CustomerId = Invoice.CustomerId
 Group by Customer.Country
+
+15. Provide a query that shows the total number of tracks in each playlist. The Playlist name should be include on the resultant table.
+
+Select Count(*) as 'Total Tracks', Playlist.Name from PlaylistTrack
+Join Playlist on PlaylistTrack.PlaylistId = Playlist.PlaylistId
+Group by PlaylistTrack.PlaylistId
