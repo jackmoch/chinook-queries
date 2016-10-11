@@ -85,3 +85,10 @@ Group by Customer.Country
 Select Count(*) as 'Total Tracks', Playlist.Name from PlaylistTrack
 Join Playlist on PlaylistTrack.PlaylistId = Playlist.PlaylistId
 Group by PlaylistTrack.PlaylistId
+
+16. Provide a query that shows all the Tracks, but displays no IDs. The resultant table should include the Album name, Media type and Genre.
+
+Select Track.Name, Album.Title, MediaType.Name, Genre.Name from Track
+Join Album on Track.AlbumId = Album.AlbumId
+Join MediaType on Track.MediaTypeId = MediaType.MediaTypeId
+Join Genre on Track.GenreId = Genre.GenreId
