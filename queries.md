@@ -12,3 +12,8 @@ Where Customer.Country = 'Brazil'
 
 Select Customer.FirstName || ' ' || Customer.LastName as 'Name', Invoice.InvoiceId, Invoice.InvoiceDate, Invoice.BillingCountry from Customer
 Join Invoice on Customer.CustomerId = Invoice.CustomerId
+
+4. Provide a query showing only the Employees who are Sales Agents.
+
+Select * from Employee
+Where Employee.Title = 'Sales Support Agent'
