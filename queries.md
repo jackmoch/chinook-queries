@@ -51,3 +51,8 @@ Where Invoice.InvoiceDate like '%2009%'
 
 Select Sum(Invoice.Total) as '2011 Total' from Invoice
 Where Invoice.InvoiceDate like '%2011%'
+
+10. Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
+
+Select Count(*) as 'Total Line Items' from InvoiceLine
+Where InvoiceLine.InvoiceId = '37'
