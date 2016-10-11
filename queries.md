@@ -34,3 +34,9 @@ Where Customer.Country = 'Brazil'
 Select Invoice.*, Employee.FirstName || ' ' || Employee.LastName as 'Full Name' from Invoice
 Join Customer on Invoice.CustomerId = Customer.CustomerId
 Join Employee on Customer.SupportRepId = Employee.EmployeeId
+
+8. Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
+
+Select Invoice.Total, Customer.FirstName || ' ' || Customer.LastName as 'Customer Name', Employee.FirstName || ' ' || Employee.LastName as 'Employee Name' from Invoice
+Join Customer on Invoice.CustomerId = Customer.CustomerId
+Join Employee on Customer.SupportRepId = Employee.EmployeeId
