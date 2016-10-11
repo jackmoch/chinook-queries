@@ -66,3 +66,10 @@ Group by InvoiceLine.InvoiceId
 
 Select Track.Name, InvoiceLine.InvoiceLineId from InvoiceLine
 Join Track on InvoiceLine.TrackId = Track.TrackId
+
+13. Provide a query that includes the purchased track name AND artist name with each invoice line item.
+
+Select Track.Name, Artist.Name, InvoiceLine.InvoiceLineId from InvoiceLine
+Join Track on InvoiceLine.TrackId = Track.TrackId
+Join Album on Track.AlbumId = Album.AlbumId
+Join Artist on Album.ArtistId = Artist.ArtistId
