@@ -98,3 +98,11 @@ Join Genre on Track.GenreId = Genre.GenreId
 Select *, Count(InvoiceLine.InvoiceLineId) as 'Total Invoice Lines' from Invoice
 Join InvoiceLine on Invoice.InvoiceId = InvoiceLine.InvoiceId
 Group by Invoice.InvoiceId
+
+18. Provide a query that shows total sales made by each sales agent.
+
+Select Employee.FirstName, Sum(Invoice.Total) as 'Total Sales' from Employee
+Join Customer on Employee.EmployeeId = Customer.SupportRepId
+Join Invoice on Customer.CustomerId = Invoice.CustomerId
+Where Employee.Title = 'Sales Support Agent'
+Group by Employee.EmployeeId
