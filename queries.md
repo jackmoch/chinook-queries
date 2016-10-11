@@ -17,3 +17,9 @@ Join Invoice on Customer.CustomerId = Invoice.CustomerId
 
 Select * from Employee
 Where Employee.Title = 'Sales Support Agent'
+
+5. Provide a query showing a unique list of billing countries from the Invoice table.
+
+Select Invoice.BillingCountry from Invoice
+Group by Invoice.BillingCountry
+
