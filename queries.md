@@ -28,3 +28,9 @@ Group by Invoice.BillingCountry
 Select * from Invoice
 Join Customer on Invoice.CustomerId = Customer.CustomerId
 Where Customer.Country = 'Brazil'
+
+7. Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name
+
+Select Invoice.*, Employee.FirstName || ' ' || Employee.LastName as 'Full Name' from Invoice
+Join Customer on Invoice.CustomerId = Customer.CustomerId
+Join Employee on Customer.SupportRepId = Employee.EmployeeId
