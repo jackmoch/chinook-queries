@@ -61,3 +61,8 @@ Where InvoiceLine.InvoiceId = '37'
 
 Select InvoiceLine.InvoiceId, Count(*) 'Total Lines' from InvoiceLine
 Group by InvoiceLine.InvoiceId
+
+12. Provide a query that includes the track name with each invoice line item.
+
+Select Track.Name, InvoiceLine.InvoiceLineId from InvoiceLine
+Join Track on InvoiceLine.TrackId = Track.TrackId
