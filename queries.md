@@ -142,3 +142,9 @@ Select Count(Customer.CustomerId) as 'Customers Assigned', Employee.FirstName ||
 Join Customer on Employee.EmployeeId = Customer.SupportRepId
 Group by Employee.EmployeeId
 
+23. Provide a query that shows the total sales per country. Which country's customers spent the most?
+
+Select Customer.Country, Sum(Invoice.Total) as 'Total Sales' from Customer 
+Join Invoice on Customer.CustomerId = Invoice.CustomerId
+Group by Customer.Country
+
