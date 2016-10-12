@@ -177,3 +177,13 @@ Join Invoice on InvoiceLine.InvoiceId = Invoice.InvoiceId
 Group by Artist.Name 
 Order By Total DESC
 Limit 3
+
+27. Provide a query that shows the most purchased Media Type.
+
+Select MediaType.Name, Sum(Invoice.Total) as 'Total' from MediaType
+Join Track on MediaType.MediaTypeId = Track.MediaTypeId
+Join InvoiceLine on Track.TrackId = InvoiceLine.TrackId
+Join Invoice on InvoiceLine.InvoiceId = Invoice.InvoiceId
+Group by MediaType.Name
+Order By Total Desc
+Limit 1
