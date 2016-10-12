@@ -166,3 +166,14 @@ Join Invoice on InvoiceLine.InvoiceId = Invoice.InvoiceId
 Group by Track.TrackId
 Order by Total DESC
 Limit 5
+
+26. Provide a query that shows the top 3 best selling artists.
+
+Select Artist.Name, Sum(Invoice.Total) as 'Total' from Artist
+Join Album on Artist.ArtistId = Album.ArtistId
+Join Track on Album.AlbumId = Track.AlbumId
+Join InvoiceLine on Track.TrackId = InvoiceLine.TrackId
+Join Invoice on InvoiceLine.InvoiceId = Invoice.InvoiceId
+Group by Artist.Name 
+Order By Total DESC
+Limit 3
