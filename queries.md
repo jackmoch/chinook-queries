@@ -135,3 +135,10 @@ Join Invoice on Customer.CustomerId = Invoice.CustomerId
 Group by Employee.EmployeeId 
 Order by Total DESC
 Limit 1
+
+22. Provide a query that shows the # of customers assigned to each sales agent.
+
+Select Count(Customer.CustomerId) as 'Customers Assigned', Employee.FirstName || ' ' || Employee.LastName as 'Name' from Employee
+Join Customer on Employee.EmployeeId = Customer.SupportRepId
+Group by Employee.EmployeeId
+
