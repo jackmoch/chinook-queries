@@ -148,3 +148,12 @@ Select Customer.Country, Sum(Invoice.Total) as 'Total Sales' from Customer
 Join Invoice on Customer.CustomerId = Invoice.CustomerId
 Group by Customer.Country
 
+24. Provide a query that shows the most purchased track of 2013.
+
+Select Track.Name, Sum(Invoice.Total) as 'Total Sales' from Track
+Join InvoiceLine on Track.TrackId = InvoiceLine.TrackId
+Join Invoice on InvoiceLine.InvoiceId = Invoice.InvoiceId
+Where Invoice.InvoiceDate like '%2013%'
+Group by Track.TrackId
+Order by Total DESC
+Limit 1
