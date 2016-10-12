@@ -126,3 +126,12 @@ Where Invoice.InvoiceDate like '%2010%'
 Group by Employee.EmployeeId 
 Order by Total DESC
 Limit 1
+
+21. Which sales agent made the most in sales over all?
+
+Select Employee.FirstName, Sum(Invoice.Total) as 'Total' from Employee
+Join Customer on Employee.EmployeeId = Customer.SupportRepId
+Join Invoice on Customer.CustomerId = Invoice.CustomerId
+Group by Employee.EmployeeId 
+Order by Total DESC
+Limit 1
