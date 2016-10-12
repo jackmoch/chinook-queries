@@ -157,3 +157,12 @@ Where Invoice.InvoiceDate like '%2013%'
 Group by Track.TrackId
 Order by Total DESC
 Limit 1
+
+25. Provide a query that shows the top 5 most purchased tracks over all.
+
+Select Track.Name, Sum(Invoice.Total) as 'Total Sales' from Track
+Join InvoiceLine on Track.TrackId = InvoiceLine.TrackId
+Join Invoice on InvoiceLine.InvoiceId = Invoice.InvoiceId
+Group by Track.TrackId
+Order by Total DESC
+Limit 5
